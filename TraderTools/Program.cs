@@ -11,7 +11,8 @@ namespace TraderTools
     {
         static void Main(string[] args)
         {
-            TextReader reader = File.OpenText(@"c: \users\paultan\documents\visual studio 2015\Projects\TraderTools\TraderTools\historyTest.csv");
+            //TextReader reader = File.OpenText(Path.Combine(Environment.CurrentDirectory, "historyTest.csv"));
+            TextReader reader = File.OpenText("historyTest.csv");
             Market market = new Market(reader);
             market.Test1();
         }
