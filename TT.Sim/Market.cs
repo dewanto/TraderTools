@@ -46,5 +46,55 @@ namespace TT.Sim
         {
             throw new NotImplementedException();
         }
+
+        public List<MarketOHLC> Get1MinuteCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get5MinuteCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get15MinuteCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get30MinuteCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get1HourCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get1HourCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> Get4HourCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> GetDailyCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> GetWeeklyCandles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MarketOHLC> GetMonthlyCandles()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
