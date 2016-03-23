@@ -32,30 +32,30 @@ namespace TraderTools
                     String[] fields = parser.ReadFields();
                     String fieldTime = fields[0] + " " + fields[1];
                     DateTime time = DateTime.Parse(fieldTime);
-                    float open = float.Parse(fields[2]);
-                    float high = float.Parse(fields[3]);
-                    float low = float.Parse(fields[4]);
-                    float close = float.Parse(fields[5]);
-                    MarketOHLC datum = new MarketOHLC(time, open, high, low, close);
-                    _history.Add(datum);
+                    decimal open = decimal.Parse(fields[2]);
+                    decimal high = decimal.Parse(fields[3]);
+                    decimal low = decimal.Parse(fields[4]);
+                    decimal close = decimal.Parse(fields[5]);
+                    MarketOHLC ohlc = new MarketOHLC(time, open, high, low, close);
+                    _history.Add(ohlc);
                 }
             }
         }
         
         /// <summary>
-        /// Inserts a market datum, preserving time-ordering.
+        /// Inserts a market OHLC, preserving time-ordering.
         /// </summary>
-        /// <param name="datum"></param>
-        public void AddDatum(MarketOHLC datum)
+        /// <param name="ohlc"></param>
+        public void AddOHLC(MarketOHLC ohlc)
         {
             throw new NotImplementedException();
         }
 
         public void Test1()
         {
-            foreach (MarketOHLC datum in _history)
+            foreach (MarketOHLC ohlc in _history)
             {
-                Console.WriteLine(datum);
+                Console.WriteLine(ohlc);
             }
         }
     }

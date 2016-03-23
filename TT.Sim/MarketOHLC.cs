@@ -12,12 +12,12 @@ namespace TraderTools
     public class MarketOHLC
     {
         public DateTime Time { get; }
-        public float Open { get; }
-        public float High { get; }
-        public float Low { get; }
-        public float Close { get; }
+        public decimal Open { get; }
+        public decimal High { get; }
+        public decimal Low { get; }
+        public decimal Close { get; }
 
-        public MarketOHLC(DateTime time, float open, float high, float low, float close)
+        public MarketOHLC(DateTime time, decimal open, decimal high, decimal low, decimal close)
         {
             Time = time;
             Open = open;
