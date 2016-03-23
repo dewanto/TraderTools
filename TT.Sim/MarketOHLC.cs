@@ -9,7 +9,7 @@ namespace TraderTools
     /// <summary>
     /// A snapshot of the market.
     /// </summary>
-    class MarketOHLC
+    public class MarketOHLC
     {
         public DateTime Time { get; }
         public float Open { get; }

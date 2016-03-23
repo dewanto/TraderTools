@@ -11,7 +11,7 @@ namespace TraderTools
     /// <summary>
     /// Stores market history.
     /// </summary>
-    class Market
+    public class Market
     {
         private List<MarketOHLC> _history;
 
