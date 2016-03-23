@@ -13,16 +13,16 @@ namespace TraderTools
     /// </summary>
     public class Market
     {
-        private List<MarketOHLC> _history;
+        public List<MarketOHLC> History { get; }
 
         public Market(List<MarketOHLC> history)
         {
-            _history = new List<MarketOHLC>(history);
+            History = new List<MarketOHLC>(history);
         }
 
         public Market(TextReader historyTextReader, String delimiter = ",")
         {
-            _history = new List<MarketOHLC>();
+            History = new List<MarketOHLC>();
             using (TextFieldParser parser = new TextFieldParser(historyTextReader))
             {
                 //parser.TextFieldType = FieldType.Delimited;
@@ -37,7 +37,7 @@ namespace TraderTools
                     decimal low = decimal.Parse(fields[4]);
                     decimal close = decimal.Parse(fields[5]);
                     MarketOHLC ohlc = new MarketOHLC(time, open, high, low, close);
-                    _history.Add(ohlc);
+                    History.Add(ohlc);
                 }
             }
         }
@@ -51,12 +51,14 @@ namespace TraderTools
             throw new NotImplementedException();
         }
 
+        /*
         public void Test1()
         {
-            foreach (MarketOHLC ohlc in _history)
+            foreach (MarketOHLC ohlc in History)
             {
                 Console.WriteLine(ohlc);
             }
         }
+        */
     }
 }
