@@ -1,49 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TT.Sim.Order" Collapsed="true">
+  <Class Name="TT.Sim.Order">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.MarketOrder" Collapsed="true">
-    <Position X="2" Y="1.5" Width="1.5" />
+  <Class Name="TT.Sim.MarketOrder">
+    <Position X="2" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MarketOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.LimitOrder" Collapsed="true">
-    <Position X="6" Y="1.5" Width="1.5" />
+  <Class Name="TT.Sim.LimitOrder">
+    <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LimitOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.BuyOrder" Collapsed="true">
-    <Position X="1" Y="2.75" Width="1.5" />
+  <Class Name="TT.Sim.BuyOrder">
+    <Position X="1" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BuyOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.SellOrder" Collapsed="true">
-    <Position X="3" Y="2.75" Width="1.5" />
+  <Class Name="TT.Sim.SellOrder">
+    <Position X="3" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SellOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.BuyLimitOrder" Collapsed="true">
-    <Position X="5" Y="2.75" Width="1.5" />
+  <Class Name="TT.Sim.BuyLimitOrder">
+    <Position X="5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BuyLimitOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.SellLimitOrder" Collapsed="true">
-    <Position X="7" Y="2.75" Width="1.5" />
+  <Class Name="TT.Sim.SellLimitOrder">
+    <Position X="7" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SellLimitOrder.cs</FileName>

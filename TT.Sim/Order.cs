@@ -2,7 +2,7 @@
 
 namespace TT.Sim
 {
-    abstract class Order
+    public abstract class Order
     {
         public DateTime TimePlaced { get; }
 
