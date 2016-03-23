@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
 
@@ -25,7 +22,6 @@ namespace TraderTools
             History = new List<MarketOHLC>();
             using (TextFieldParser parser = new TextFieldParser(historyTextReader))
             {
-                //parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(delimiter);
                 while (!parser.EndOfData)
                 {
@@ -50,15 +46,5 @@ namespace TraderTools
         {
             throw new NotImplementedException();
         }
-
-        /*
-        public void Test1()
-        {
-            foreach (MarketOHLC ohlc in History)
-            {
-                Console.WriteLine(ohlc);
-            }
-        }
-        */
     }
 }

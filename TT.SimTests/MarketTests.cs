@@ -15,11 +15,12 @@ namespace TT.SimTests
             TextReader reader = File.OpenText(@"testFiles\historyTest.csv");
             Market market = new Market(reader);
 
-            Assert.AreEqual(DateTime.Parse("2016.03.01 00:05"), market.History[5].Time);
-            Assert.AreEqual(1.088340M, market.History[5].Open);
-            Assert.AreEqual(1.088390M, market.History[5].High);
-            Assert.AreEqual(1.088330M, market.History[5].Low);
-            Assert.AreEqual(1.088370M, market.History[5].Close);
+            MarketOHLC ohlc = market.History[5];
+            Assert.AreEqual(DateTime.Parse("2016.03.01 00:05"), ohlc.Time);
+            Assert.AreEqual(1.088340M, ohlc.Open);
+            Assert.AreEqual(1.088390M, ohlc.High);
+            Assert.AreEqual(1.088330M, ohlc.Low);
+            Assert.AreEqual(1.088370M, ohlc.Close);
         }
     }
 }
