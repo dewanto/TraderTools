@@ -72,11 +72,6 @@ namespace TT.Sim
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get1HourCandles()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<MarketOHLC> Get4HourCandles()
         {
             throw new NotImplementedException();
