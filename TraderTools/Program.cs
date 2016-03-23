@@ -11,10 +11,7 @@ namespace TraderTools
     {
         static void Main(string[] args)
         {
-            //TextReader reader = File.OpenText(Path.Combine(Environment.CurrentDirectory, "historyTest.csv"));
-            TextReader reader = File.OpenText("historyTest.csv");
-            Market market = new Market(reader);
-            market.Test1();
+            Console.WriteLine("Nothing happening yet...");
         }
     }
 }

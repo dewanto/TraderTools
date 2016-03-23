@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderTools", "TraderTools\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT.Sim", "TT.Sim\TT.Sim.csproj", "{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{5A27AA76-B3B1-4516-99DC-C7D1FEEEF8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT.SimTests", "TT.SimTests\TT.SimTests.csproj", "{664FC71B-327E-47A9-9A91-84B59E653768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664FC71B-327E-47A9-9A91-84B59E653768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664FC71B-327E-47A9-9A91-84B59E653768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664FC71B-327E-47A9-9A91-84B59E653768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664FC71B-327E-47A9-9A91-84B59E653768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{664FC71B-327E-47A9-9A91-84B59E653768} = {5A27AA76-B3B1-4516-99DC-C7D1FEEEF8DE}
 	EndGlobalSection
 EndGlobal
