@@ -51,7 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TT.Sim\TraderTools.Simulator.csproj">
+    <ProjectReference Include="..\TraderTools.Simulator\TraderTools.Simulator.csproj">
       <Project>{9cdbb42f-f20d-4c57-bf7a-4a6d506c04ef}</Project>
       <Name>TraderTools.Simulator</Name>
     </ProjectReference>
