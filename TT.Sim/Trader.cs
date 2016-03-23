@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TT.Sim
 {
@@ -13,13 +9,15 @@ namespace TT.Sim
     {
         private Account _account;
         private Market _market;
-        private List<Order> _orders;
+        private List<Order> _currentOrders;
+        private List<Order> _completedOrders;
 
         public Trader(Account account, Market market)
         {
             _account = account;
             _market = market;
-            _orders = new List<Order>();
+            _currentOrders = new List<Order>();
+            _completedOrders = new List<Order>();
         }
     }
 }

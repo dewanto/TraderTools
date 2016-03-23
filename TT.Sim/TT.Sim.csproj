@@ -42,11 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="BuyLimitOrder.cs" />
+    <Compile Include="BuyOrder.cs" />
+    <Compile Include="LimitOrder.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="MarketOHLC.cs" />
+    <Compile Include="MarketOrder.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellLimitOrder.cs" />
+    <Compile Include="SellOrder.cs" />
     <Compile Include="Trader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
