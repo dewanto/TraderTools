@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TT.Sim
+namespace TraderTools.Simulator
 {
     /// <summary>
     /// A snapshot of the market.

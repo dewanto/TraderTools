@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TraderTools
+namespace TraderTools.UserInterface
 {
     class Program
     {

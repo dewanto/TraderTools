@@ -1,48 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TT.Sim.Order">
+  <Class Name="TraderTools.Simulator.Order">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.MarketOrder">
+  <Class Name="TraderTools.Simulator.MarketOrder">
     <Position X="2" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MarketOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.LimitOrder">
+  <Class Name="TraderTools.Simulator.LimitOrder">
     <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LimitOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.BuyOrder">
+  <Class Name="TraderTools.Simulator.BuyOrder">
     <Position X="1" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BuyOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.SellOrder">
+  <Class Name="TraderTools.Simulator.SellOrder">
     <Position X="3" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SellOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.BuyLimitOrder">
+  <Class Name="TraderTools.Simulator.BuyLimitOrder">
     <Position X="5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BuyLimitOrder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TT.Sim.SellLimitOrder">
+  <Class Name="TraderTools.Simulator.SellLimitOrder">
     <Position X="7" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>

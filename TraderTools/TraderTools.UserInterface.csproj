@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TT.Sim\TT.Sim.csproj">
+    <ProjectReference Include="..\TT.Sim\TraderTools.Simulator.csproj">
       <Project>{9cdbb42f-f20d-4c57-bf7a-4a6d506c04ef}</Project>
-      <Name>TT.Sim</Name>
+      <Name>TraderTools.Simulator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

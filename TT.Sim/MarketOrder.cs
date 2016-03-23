@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TT.Sim
+namespace TraderTools.Simulator
 {
     class MarketOrder : Order
     {

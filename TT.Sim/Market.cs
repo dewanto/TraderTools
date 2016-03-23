@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
 
-namespace TT.Sim
+namespace TraderTools.Simulator
 {
     /// <summary>
     /// Stores market history.

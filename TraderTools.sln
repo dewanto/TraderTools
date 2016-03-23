@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderTools", "TraderTools\TraderTools.csproj", "{4548F87C-5D8A-42C5-9524-9EBA1562CEBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderTools.UserInterface", "TraderTools\TraderTools.UserInterface.csproj", "{4548F87C-5D8A-42C5-9524-9EBA1562CEBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT.Sim", "TT.Sim\TT.Sim.csproj", "{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderTools.Simulator", "TT.Sim\TraderTools.Simulator.csproj", "{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{5A27AA76-B3B1-4516-99DC-C7D1FEEEF8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT.SimTests", "TT.SimTests\TT.SimTests.csproj", "{664FC71B-327E-47A9-9A91-84B59E653768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderTools.SimulatorTests", "TT.SimTests\TraderTools.SimulatorTests.csproj", "{664FC71B-327E-47A9-9A91-84B59E653768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

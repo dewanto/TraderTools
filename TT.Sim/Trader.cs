@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace TT.Sim
+namespace TraderTools.Simulator
 {
     /// <summary>
     /// Trades a market using a given strategy.

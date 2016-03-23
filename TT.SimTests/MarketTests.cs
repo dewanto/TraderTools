@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-using TT.Sim;
+using TraderTools.Simulator;
 
-namespace TT.SimTests
+namespace TraderTools.SimulatorTests
 {
     [TestClass]
     public class MarketTests

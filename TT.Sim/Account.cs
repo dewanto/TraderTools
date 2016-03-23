@@ -1,4 +1,4 @@
-﻿namespace TT.Sim
+﻿namespace TraderTools.Simulator
 {
     public class Account
     {
