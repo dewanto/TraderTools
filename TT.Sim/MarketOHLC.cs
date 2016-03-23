@@ -9,7 +9,7 @@ namespace TraderTools
     /// <summary>
     /// A snapshot of the market.
     /// </summary>
-    class MarketDatum
+    class MarketOHLC
     {
         public DateTime Time { get; }
         public float Open { get; }
@@ -17,7 +17,7 @@ namespace TraderTools
         public float Low { get; }
         public float Close { get; }
 
-        public MarketDatum(DateTime time, float open, float high, float low, float close)
+        public MarketOHLC(DateTime time, float open, float high, float low, float close)
         {
             Time = time;
             Open = open;
@@ -28,7 +28,7 @@ namespace TraderTools
 
         public override string ToString()
         {
-           return String.Format("MarketDatum: {0}, {1:.00000}, {2:.00000}, {3:.00000}, {4:.00000}", Time, Open, High, Low, Close);
+           return String.Format("MarketOHLC: {0}, {1:.00000}, {2:.00000}, {3:.00000}, {4:.00000}", Time, Open, High, Low, Close);
         }
     }
 }

@@ -13,16 +13,16 @@ namespace TraderTools
     /// </summary>
     class Market
     {
-        private List<MarketDatum> _history;
+        private List<MarketOHLC> _history;
 
-        public Market(List<MarketDatum> history)
+        public Market(List<MarketOHLC> history)
         {
-            _history = new List<MarketDatum>(history);
+            _history = new List<MarketOHLC>(history);
         }
 
         public Market(TextReader historyTextReader, String delimiter = ",")
         {
-            _history = new List<MarketDatum>();
+            _history = new List<MarketOHLC>();
             using (TextFieldParser parser = new TextFieldParser(historyTextReader))
             {
                 //parser.TextFieldType = FieldType.Delimited;
@@ -36,7 +36,7 @@ namespace TraderTools
                     float high = float.Parse(fields[3]);
                     float low = float.Parse(fields[4]);
                     float close = float.Parse(fields[5]);
-                    MarketDatum datum = new MarketDatum(time, open, high, low, close);
+                    MarketOHLC datum = new MarketOHLC(time, open, high, low, close);
                     _history.Add(datum);
                 }
             }
@@ -46,14 +46,14 @@ namespace TraderTools
         /// Inserts a market datum, preserving time-ordering.
         /// </summary>
         /// <param name="datum"></param>
-        public void AddDatum(MarketDatum datum)
+        public void AddDatum(MarketOHLC datum)
         {
             throw new NotImplementedException();
         }
 
         public void Test1()
         {
-            foreach (MarketDatum datum in _history)
+            foreach (MarketOHLC datum in _history)
             {
                 Console.WriteLine(datum);
             }
