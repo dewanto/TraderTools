@@ -41,7 +41,13 @@ namespace TraderTools.SimulatorTests
             Assert.AreEqual(1.085810M, dailyCandles[1].Open);
             Assert.AreEqual(1.085880M, dailyCandles[2].Open);
 
-            // TODO: Asserts for high and low
+            Assert.AreEqual(1.089360M, dailyCandles[0].High);
+            Assert.AreEqual(1.087580M, dailyCandles[1].High);
+            Assert.AreEqual(1.097280M, dailyCandles[2].High);
+
+            Assert.AreEqual(1.083410M, dailyCandles[0].Low);
+            Assert.AreEqual(1.082540M, dailyCandles[1].Low);
+            Assert.AreEqual(1.085350M, dailyCandles[2].Low);
 
             Assert.AreEqual(1.085790M, dailyCandles[0].Close);
             Assert.AreEqual(1.085860M, dailyCandles[1].Close);
