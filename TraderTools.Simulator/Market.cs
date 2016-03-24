@@ -10,16 +10,16 @@ namespace TraderTools.Simulator
     /// </summary>
     public class Market
     {
-        public List<MarketOHLC> History { get; }
+        public List<MarketCandle> History { get; }
 
-        public Market(List<MarketOHLC> history)
+        public Market(List<MarketCandle> history)
         {
-            History = new List<MarketOHLC>(history);
+            History = new List<MarketCandle>(history);
         }
 
         public Market(TextReader historyTextReader, String delimiter = ",")
         {
-            History = new List<MarketOHLC>();
+            History = new List<MarketCandle>();
             using (TextFieldParser parser = new TextFieldParser(historyTextReader))
             {
                 parser.SetDelimiters(delimiter);
@@ -32,62 +32,62 @@ namespace TraderTools.Simulator
                     decimal high = decimal.Parse(fields[3]);
                     decimal low = decimal.Parse(fields[4]);
                     decimal close = decimal.Parse(fields[5]);
-                    MarketOHLC ohlc = new MarketOHLC(time, open, high, low, close);
-                    History.Add(ohlc);
+                    MarketCandle candle = new MarketCandle(time, open, high, low, close);
+                    History.Add(candle);
                 }
             }
         }
         
         /// <summary>
-        /// Inserts a market OHLC, preserving time-ordering.
+        /// Inserts a market candle, preserving time-ordering.
         /// </summary>
-        /// <param name="ohlc"></param>
-        public void AddOHLC(MarketOHLC ohlc)
+        /// <param name="candle"></param>
+        public void Addcandle(MarketCandle candle)
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get1MinuteCandles()
+        public List<MarketCandle> Get1MinuteCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get5MinuteCandles()
+        public List<MarketCandle> Get5MinuteCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get15MinuteCandles()
+        public List<MarketCandle> Get15MinuteCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get30MinuteCandles()
+        public List<MarketCandle> Get30MinuteCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get1HourCandles()
+        public List<MarketCandle> Get1HourCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> Get4HourCandles()
+        public List<MarketCandle> Get4HourCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> GetDailyCandles()
+        public List<MarketCandle> GetDailyCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> GetWeeklyCandles()
+        public List<MarketCandle> GetWeeklyCandles()
         {
             throw new NotImplementedException();
         }
 
-        public List<MarketOHLC> GetMonthlyCandles()
+        public List<MarketCandle> GetMonthlyCandles()
         {
             throw new NotImplementedException();
         }

@@ -3,9 +3,9 @@
 namespace TraderTools.Simulator
 {
     /// <summary>
-    /// A snapshot of the market.
+    /// A price "candle" with candle (open, high, low, close) data over a period of time.
     /// </summary>
-    public class MarketOHLC
+    public class MarketCandle
     {
         public DateTime Time { get; }
         public decimal Open { get; }
@@ -13,7 +13,7 @@ namespace TraderTools.Simulator
         public decimal Low { get; }
         public decimal Close { get; }
 
-        public MarketOHLC(DateTime time, decimal open, decimal high, decimal low, decimal close)
+        public MarketCandle(DateTime time, decimal open, decimal high, decimal low, decimal close)
         {
             Time = time;
             Open = open;
@@ -24,7 +24,7 @@ namespace TraderTools.Simulator
 
         public override string ToString()
         {
-           return String.Format("MarketOHLC: {0}, {1:.00000}, {2:.00000}, {3:.00000}, {4:.00000}", Time, Open, High, Low, Close);
+           return String.Format("MarketCandle: {0}, {1:.00000}, {2:.00000}, {3:.00000}, {4:.00000}", Time, Open, High, Low, Close);
         }
     }
 }
