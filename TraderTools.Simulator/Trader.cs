@@ -9,7 +9,7 @@ namespace TraderTools.Simulator
     {
         private Account _account;
         private Market _market;
-        private int _currentcandleNum;
+        protected int _currentCandleNum;
         private List<Order> _currentOrders;
         private List<Order> _completedOrders;
 
@@ -17,12 +17,12 @@ namespace TraderTools.Simulator
         {
             _account = account;
             _market = market;
-            _currentcandleNum = startingCandleNum;
+            _currentCandleNum = startingCandleNum;
             _currentOrders = new List<Order>();
             _completedOrders = new List<Order>();
         }
 
         public abstract List<Order> Analyze();
-        public abstract void UpdateOrders();
+        public abstract void StepForward();
     }
 }
