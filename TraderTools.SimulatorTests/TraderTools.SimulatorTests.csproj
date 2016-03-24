@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="MarketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="AccountTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraderTools.Simulator\TraderTools.Simulator.csproj">
