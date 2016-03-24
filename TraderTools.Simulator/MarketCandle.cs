@@ -3,7 +3,7 @@
 namespace TraderTools.Simulator
 {
     /// <summary>
-    /// A price "candle" with candle (open, high, low, close) data over a period of time.
+    /// A price "candle" with OHLC (open, high, low, close) data over a period of time.
     /// </summary>
     public class MarketCandle
     {
@@ -29,6 +29,16 @@ namespace TraderTools.Simulator
             High = high;
             Low = low;
             Close = close;
+        }
+
+        public bool IsBullish()
+        {
+            return Close > Open;
+        }
+
+        public bool IsBearish()
+        {
+            return Close < Open;
         }
 
         public override string ToString()
