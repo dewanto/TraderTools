@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using TraderTools.Simulator;
+using System.Collections.Generic;
 
 namespace TraderTools.SimulatorTests
 {
@@ -9,10 +10,10 @@ namespace TraderTools.SimulatorTests
     public class MarketTests
     {
         [TestMethod]
-        [DeploymentItem("historyTest.csv", "testFiles")]
+        [DeploymentItem("constructMarketTest.csv", "testFiles")]
         public void ConstructWithTextReaderValid()
         {
-            TextReader reader = File.OpenText(@"testFiles\historyTest.csv");
+            TextReader reader = File.OpenText(@"testFiles\constructMarketTest.csv");
             Market market = new Market(reader);
 
             MarketCandle candle = market.History[5];
@@ -21,6 +22,30 @@ namespace TraderTools.SimulatorTests
             Assert.AreEqual(1.088390M, candle.High);
             Assert.AreEqual(1.088330M, candle.Low);
             Assert.AreEqual(1.088370M, candle.Close);
+        }
+
+        [TestMethod]
+        [DeploymentItem("getDailyCandlesTest.csv", "testFiles")]
+        public void GetDailyCandlesValid()
+        {
+            TextReader reader = File.OpenText(@"testFiles\getDailyCandlesTest.csv");
+            Market market = new Market(reader);
+
+            List<MarketCandle> dailyCandles = market.GetDailyCandles();
+
+            Assert.AreEqual(DateTime.Parse("2016.03.01 00:00"), dailyCandles[0].Time);
+            Assert.AreEqual(DateTime.Parse("2016.03.02 00:00"), dailyCandles[1].Time);
+            Assert.AreEqual(DateTime.Parse("2016.03.03 00:00"), dailyCandles[2].Time);
+
+            Assert.AreEqual(1.088160M, dailyCandles[0].Open);
+            Assert.AreEqual(1.085810M, dailyCandles[1].Open);
+            Assert.AreEqual(1.085880M, dailyCandles[2].Open);
+
+            // TODO: Asserts for high and low
+
+            Assert.AreEqual(1.085790M, dailyCandles[0].Close);
+            Assert.AreEqual(1.085860M, dailyCandles[1].Close);
+            Assert.AreEqual(1.094620M, dailyCandles[2].Close);
         }
     }
 }
