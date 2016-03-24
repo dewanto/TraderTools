@@ -12,6 +12,13 @@ namespace TraderTools.Simulator
         public decimal High { get; set; }
         public decimal Low { get; set; }
         public decimal Close { get; set; }
+        public decimal Body
+        {
+            get
+            {
+                return Math.Abs(Close - Open);
+            }
+        }
 
         public MarketCandle(MarketCandle candle)
         {
