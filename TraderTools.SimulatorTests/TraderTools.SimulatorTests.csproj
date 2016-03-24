@@ -6,8 +6,8 @@
     <ProjectGuid>{664FC71B-327E-47A9-9A91-84B59E653768}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TT.SimTests</RootNamespace>
-    <AssemblyName>TT.SimTests</AssemblyName>
+    <RootNamespace>TraderTools.SimulatorTests</RootNamespace>
+    <AssemblyName>TraderTools.SimulatorTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="MarketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraderTools.Simulator\TraderTools.Simulator.csproj">

@@ -7,8 +7,8 @@
     <ProjectGuid>{9CDBB42F-F20D-4C57-BF7A-4A6D506C04EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TT.Sim</RootNamespace>
-    <AssemblyName>TT.Sim</AssemblyName>
+    <RootNamespace>TraderTools.Simulator</RootNamespace>
+    <AssemblyName>TraderTools.Simulator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
