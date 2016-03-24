@@ -49,7 +49,8 @@ namespace TraderTools.Simulator
 
         public void SortHistory()
         {
-            History = History.OrderBy(o => o.Time).ToList();
+            //History = History.OrderBy(o => o.Time).ToList();
+            History.Sort((x, y) => x.Time.CompareTo(y.Time));
         }
         
         /// <summary>
