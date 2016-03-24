@@ -8,10 +8,19 @@ namespace TraderTools.Simulator
     public class MarketCandle
     {
         public DateTime Time { get; }
-        public decimal Open { get; }
-        public decimal High { get; }
-        public decimal Low { get; }
-        public decimal Close { get; }
+        public decimal Open { get; set; }
+        public decimal High { get; set; }
+        public decimal Low { get; set; }
+        public decimal Close { get; set; }
+
+        public MarketCandle(MarketCandle candle)
+        {
+            Time = candle.Time;
+            Open = candle.Open;
+            High = candle.High;
+            Low = candle.Low;
+            Close = candle.Close;
+        }
 
         public MarketCandle(DateTime time, decimal open, decimal high, decimal low, decimal close)
         {
