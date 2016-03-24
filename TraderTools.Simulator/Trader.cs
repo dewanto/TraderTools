@@ -9,15 +9,15 @@ namespace TraderTools.Simulator
     {
         private Account _account;
         private Market _market;
-        private int _currentOHLCNum;
+        private int _currentcandleNum;
         private List<Order> _currentOrders;
         private List<Order> _completedOrders;
 
-        public Trader(Account account, Market market, int startingOHLCNum = 0)
+        public Trader(Account account, Market market, int startingCandleNum = 0)
         {
             _account = account;
             _market = market;
-            _currentOHLCNum = startingOHLCNum;
+            _currentcandleNum = startingCandleNum;
             _currentOrders = new List<Order>();
             _completedOrders = new List<Order>();
         }
