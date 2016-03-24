@@ -17,6 +17,12 @@ namespace TraderTools.Simulator
             History = new List<MarketCandle>(history);
         }
 
+        /// <summary>
+        /// Constructs a Market object from a CSV file in the following format:
+        ///   Date, Time, Open, High, Low, Close
+        /// </summary>
+        /// <param name="historyTextReader"></param>
+        /// <param name="delimiter"></param>
         public Market(TextReader historyTextReader, String delimiter = ",")
         {
             History = new List<MarketCandle>();
@@ -79,7 +85,28 @@ namespace TraderTools.Simulator
 
         public List<MarketCandle> GetDailyCandles()
         {
-            throw new NotImplementedException();
+            var dailyCandles = new List<MarketCandle>();
+            var currentCandle = new MarketCandle(History[0]);
+            var currentDay = currentCandle.Time.Day;
+
+            for (int i = 0; i < History.Count - 1; i++)
+            {
+                if (History[i].High > currentCandle.High) currentCandle.High = History[i].High;
+                if (History[i].Low < currentCandle.Low) currentCandle.Low = History[i].Low;
+                
+                if (History[i].Time.Day != currentDay)
+                {
+                    currentCandle.Close = History[i - 1].Close;
+                    dailyCandles.Add(currentCandle);
+                    currentCandle = new MarketCandle(History[i]);
+                    currentDay = currentCandle.Time.Day;
+                }
+            }
+
+            currentCandle.Close = History[History.Count - 1].Close;
+            dailyCandles.Add(currentCandle);
+
+            return dailyCandles;
         }
 
         public List<MarketCandle> GetWeeklyCandles()
