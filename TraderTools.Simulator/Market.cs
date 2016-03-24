@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
+using System.Linq;
 
 namespace TraderTools.Simulator
 {
@@ -10,11 +11,12 @@ namespace TraderTools.Simulator
     /// </summary>
     public class Market
     {
-        public List<MarketCandle> History { get; }
+        public List<MarketCandle> History { get; private set; }
 
         public Market(List<MarketCandle> history)
         {
             History = new List<MarketCandle>(history);
+            SortHistory();
         }
 
         /// <summary>
@@ -42,13 +44,19 @@ namespace TraderTools.Simulator
                     History.Add(candle);
                 }
             }
+            SortHistory();
+        }
+
+        public void SortHistory()
+        {
+            History = History.OrderBy(o => o.Time).ToList();
         }
         
         /// <summary>
         /// Inserts a market candle, preserving time-ordering.
         /// </summary>
         /// <param name="candle"></param>
-        public void Addcandle(MarketCandle candle)
+        public void AddCandle(MarketCandle candle)
         {
             throw new NotImplementedException();
         }
@@ -87,19 +95,19 @@ namespace TraderTools.Simulator
         {
             var dailyCandles = new List<MarketCandle>();
             var currentCandle = new MarketCandle(History[0]);
-            var currentDay = currentCandle.Time.Day;
+            var currentDate = currentCandle.Time.Date;
 
             for (int i = 0; i < History.Count - 1; i++)
             {
                 if (History[i].High > currentCandle.High) currentCandle.High = History[i].High;
                 if (History[i].Low < currentCandle.Low) currentCandle.Low = History[i].Low;
                 
-                if (History[i].Time.Day != currentDay)
+                if (History[i].Time.Date != currentDate)
                 {
                     currentCandle.Close = History[i - 1].Close;
                     dailyCandles.Add(currentCandle);
                     currentCandle = new MarketCandle(History[i]);
-                    currentDay = currentCandle.Time.Day;
+                    currentDate = currentCandle.Time.Date;
                 }
             }
 
@@ -116,7 +124,30 @@ namespace TraderTools.Simulator
 
         public List<MarketCandle> GetMonthlyCandles()
         {
-            throw new NotImplementedException();
+            var monthlyCandles = new List<MarketCandle>();
+            var currentCandle = new MarketCandle(History[0]);
+            var currentMonth = currentCandle.Time.Month;
+            var currentYear = currentCandle.Time.Year;
+
+            for (int i = 0; i < History.Count - 1; i++)
+            {
+                if (History[i].High > currentCandle.High) currentCandle.High = History[i].High;
+                if (History[i].Low < currentCandle.Low) currentCandle.Low = History[i].Low;
+                
+                if (History[i].Time.Month != currentMonth || History[i].Time.Year != currentYear)
+                {
+                    currentCandle.Close = History[i - 1].Close;
+                    monthlyCandles.Add(currentCandle);
+                    currentCandle = new MarketCandle(History[i]);
+                    currentMonth = currentCandle.Time.Month;
+                    currentYear = currentCandle.Time.Year;
+                }
+            }
+
+            currentCandle.Close = History[History.Count - 1].Close;
+            monthlyCandles.Add(currentCandle);
+
+            return monthlyCandles;
         }
     }
 }
