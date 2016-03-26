@@ -33,6 +33,8 @@ namespace TraderTools.SimulatorTests
 
             List<MarketCandle> dailyCandles = market.GetDailyCandles();
 
+            Assert.AreEqual(3, dailyCandles.Count);
+
             Assert.AreEqual(DateTime.Parse("2016.03.01 00:00"), dailyCandles[0].Time);
             Assert.AreEqual(DateTime.Parse("2016.03.02 00:00"), dailyCandles[1].Time);
             Assert.AreEqual(DateTime.Parse("2016.03.03 00:00"), dailyCandles[2].Time);
@@ -52,6 +54,38 @@ namespace TraderTools.SimulatorTests
             Assert.AreEqual(1.085790M, dailyCandles[0].Close);
             Assert.AreEqual(1.085860M, dailyCandles[1].Close);
             Assert.AreEqual(1.094620M, dailyCandles[2].Close);
+        }
+
+        [TestMethod]
+        [DeploymentItem("getMonthlyCandlesTest.csv", "testFiles")]
+        public void GetMonthlyCandlesValid()
+        {
+            TextReader reader = File.OpenText(@"testFiles\getMonthlyCandlesTest.csv");
+            Market market = new Market(reader);
+
+            List<MarketCandle> monthlyCandles = market.GetMonthlyCandles();
+
+            Assert.AreEqual(3, monthlyCandles.Count);
+
+            Assert.AreEqual(DateTime.Parse("2015.06.01 00:00"), monthlyCandles[0].Time);
+            Assert.AreEqual(DateTime.Parse("2015.07.01 00:00"), monthlyCandles[1].Time);
+            Assert.AreEqual(DateTime.Parse("2015.08.02 17:00"), monthlyCandles[2].Time);
+
+            //Assert.AreEqual(1.088160M, monthlyCandles[0].Open);
+            //Assert.AreEqual(1.085810M, monthlyCandles[1].Open);
+            //Assert.AreEqual(1.085880M, monthlyCandles[2].Open);
+
+            //Assert.AreEqual(1.089360M, monthlyCandles[0].High);
+            //Assert.AreEqual(1.087580M, monthlyCandles[1].High);
+            //Assert.AreEqual(1.097280M, monthlyCandles[2].High);
+
+            //Assert.AreEqual(1.083410M, monthlyCandles[0].Low);
+            //Assert.AreEqual(1.082540M, monthlyCandles[1].Low);
+            //Assert.AreEqual(1.085350M, monthlyCandles[2].Low);
+
+            //Assert.AreEqual(1.085790M, monthlyCandles[0].Close);
+            //Assert.AreEqual(1.085860M, monthlyCandles[1].Close);
+            //Assert.AreEqual(1.094620M, monthlyCandles[2].Close);
         }
     }
 }
