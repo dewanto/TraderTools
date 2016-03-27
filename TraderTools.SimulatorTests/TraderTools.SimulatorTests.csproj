@@ -63,17 +63,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="constructMarketTest.csv">
+    <Content Include="testData10Minutes.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="getDailyCandlesTest.csv">
+    <Content Include="testData3Days.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="getMonthlyCandlesTest.csv">
+    <Content Include="testData3Months.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

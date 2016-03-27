@@ -10,11 +10,11 @@ namespace TraderTools.SimulatorTests
     public class MarketTests
     {
         [TestMethod]
-        [DeploymentItem("constructMarketTest.csv", "testFiles")]
+        [DeploymentItem("testData10Minutes.csv", "testFiles")]
         public void ConstructWithTextReaderValid()
         {
-            TextReader reader = File.OpenText(@"testFiles\constructMarketTest.csv");
-            Market market = new Market(reader);
+            var textReader = File.OpenText(@"testFiles\testData10Minutes.csv");
+            var market = new Market(textReader);
 
             MarketCandle candle = market.History[5];
             Assert.AreEqual(DateTime.Parse("2016.03.01 00:05"), candle.Time);
@@ -25,11 +25,11 @@ namespace TraderTools.SimulatorTests
         }
 
         [TestMethod]
-        [DeploymentItem("getDailyCandlesTest.csv", "testFiles")]
+        [DeploymentItem("testData3Days.csv", "testFiles")]
         public void GetDailyCandlesValid()
         {
-            TextReader reader = File.OpenText(@"testFiles\getDailyCandlesTest.csv");
-            Market market = new Market(reader);
+            var textReader = File.OpenText(@"testFiles\testData3Days.csv");
+            var market = new Market(textReader);
 
             List<MarketCandle> dailyCandles = market.GetDailyCandles();
 
@@ -57,13 +57,13 @@ namespace TraderTools.SimulatorTests
         }
 
         [TestMethod]
-        [DeploymentItem("getMonthlyCandlesTest.csv", "testFiles")]
+        [DeploymentItem("testData3Months.csv", "testFiles")]
         public void GetMonthlyCandlesValid()
         {
-            TextReader reader = File.OpenText(@"testFiles\getMonthlyCandlesTest.csv");
-            Market market = new Market(reader);
+            var textReader = File.OpenText(@"testFiles\testData3Months.csv");
+            var market = new Market(textReader);
 
-            List<MarketCandle> monthlyCandles = market.GetMonthlyCandles();
+            var monthlyCandles = market.GetMonthlyCandles();
 
             Assert.AreEqual(3, monthlyCandles.Count);
 
