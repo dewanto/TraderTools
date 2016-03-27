@@ -34,13 +34,13 @@ namespace TraderTools.Simulator
                 while (!parser.EndOfData)
                 {
                     String[] fields = parser.ReadFields();
-                    String fieldTime = fields[0] + " " + fields[1];
-                    DateTime time = DateTime.Parse(fieldTime);
-                    decimal open = decimal.Parse(fields[2]);
-                    decimal high = decimal.Parse(fields[3]);
-                    decimal low = decimal.Parse(fields[4]);
-                    decimal close = decimal.Parse(fields[5]);
-                    MarketCandle candle = new MarketCandle(time, open, high, low, close);
+                    var fieldTime = fields[0] + " " + fields[1];
+                    var time = DateTime.Parse(fieldTime);
+                    var open = decimal.Parse(fields[2]);
+                    var high = decimal.Parse(fields[3]);
+                    var low = decimal.Parse(fields[4]);
+                    var close = decimal.Parse(fields[5]);
+                    var candle = new MarketCandle(time, open, high, low, close);
                     History.Add(candle);
                 }
             }
@@ -84,7 +84,32 @@ namespace TraderTools.Simulator
 
         public List<MarketCandle> Get1HourCandles()
         {
-            throw new NotImplementedException();
+            var hourlyCandles = new List<MarketCandle>();
+            var currentCandle = History[0];
+            var currentHour = currentCandle.Time.Hour;
+            var currentDate = currentCandle.Time.Date;
+
+            for (int i = 0; i < History.Count - 1; i++)
+            {
+                if (History[i].High > currentCandle.High) currentCandle.High = History[i].High;
+                if (History[i].Low < currentCandle.Low) currentCandle.Low = History[i].Low;
+                
+                if (History[i].Time.Hour != currentHour || History[i].Time.Date != currentDate)
+                {
+                    currentCandle.Close = History[i - 1].Close;
+                    hourlyCandles.Add(currentCandle);
+                    currentCandle = History[i];
+                    currentHour = currentCandle.Time.Hour;
+                    currentDate = currentCandle.Time.Date;
+                }
+            }
+
+            currentCandle.Close = History[History.Count - 1].Close;
+            hourlyCandles.Add(currentCandle);
+
+            return hourlyCandles;
+
+
         }
 
         public List<MarketCandle> Get4HourCandles()
@@ -95,7 +120,7 @@ namespace TraderTools.Simulator
         public List<MarketCandle> GetDailyCandles()
         {
             var dailyCandles = new List<MarketCandle>();
-            var currentCandle = new MarketCandle(History[0]);
+            var currentCandle = History[0];
             var currentDate = currentCandle.Time.Date;
 
             for (int i = 0; i < History.Count - 1; i++)
@@ -107,7 +132,7 @@ namespace TraderTools.Simulator
                 {
                     currentCandle.Close = History[i - 1].Close;
                     dailyCandles.Add(currentCandle);
-                    currentCandle = new MarketCandle(History[i]);
+                    currentCandle = History[i];
                     currentDate = currentCandle.Time.Date;
                 }
             }
@@ -126,7 +151,7 @@ namespace TraderTools.Simulator
         public List<MarketCandle> GetMonthlyCandles()
         {
             var monthlyCandles = new List<MarketCandle>();
-            var currentCandle = new MarketCandle(History[0]);
+            var currentCandle = History[0];
             var currentMonth = currentCandle.Time.Month;
             var currentYear = currentCandle.Time.Year;
 
@@ -139,7 +164,7 @@ namespace TraderTools.Simulator
                 {
                     currentCandle.Close = History[i - 1].Close;
                     monthlyCandles.Add(currentCandle);
-                    currentCandle = new MarketCandle(History[i]);
+                    currentCandle = History[i];
                     currentMonth = currentCandle.Time.Month;
                     currentYear = currentCandle.Time.Year;
                 }
